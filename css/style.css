@@ -1,0 +1,247 @@
+:root {
+    --nav-bar-text-color: #eee;
+    --nav-bar-background: #1F4B72;
+    --single-day-cards: #102A43;
+    --table-hover: #354658;
+}
+
+* {
+    font-family: "Montserrat", sans-serif;
+    color: var(--nav-bar-text-color);
+}
+
+body {
+    background-color: #031B2A;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: var(--nav-bar-background);
+}
+
+.navbar-brand,
+.nav-item .nav-link,
+.nav-item .nav-link.active {
+    font-family: "Montserrat", sans-serif;
+    color: var(--nav-bar-text-color);
+    transition: 0s all;
+}
+
+.nav-link {
+    font-weight: 500;
+    letter-spacing: 1.2px;
+}
+
+.nav-link.active {
+    font-weight: 600;
+    outline: #B4C3D0 solid 2px;
+}
+
+.navbar-brand {
+    font-family: "Merriweather", serif;
+}
+
+.navbar-brand:hover {
+    color: var(--nav-bar-text-color);
+}
+
+.navbar-brand:focus {
+    color: var(--nav-bar-text-color);
+}
+
+.navbar-toggler {
+    border-width: 0px;
+    border-color: var(--nav-bar-text-color);
+}
+
+.navbar-toggler i {
+    color: var(--nav-bar-text-color);
+}
+
+.navbar-toggler:focus {
+    box-shadow: unset;
+}
+
+#find-city-btn {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#city-search {
+    color: #222;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: .6px;
+}
+
+#city-search:focus {
+    outline: unset;
+}
+
+.loader {
+    width: 50px;
+    --b: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #514b82;
+    -webkit-mask:
+        repeating-conic-gradient(#0000 0deg, #000 1deg 70deg, #0000 71deg 90deg),
+        radial-gradient(farthest-side, #0000 calc(100% - var(--b) - 1px), #000 calc(100% - var(--b)));
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+    animation: l5 1s infinite;
+}
+
+@keyframes l5 {
+    to {
+        transform: rotate(.5turn)
+    }
+}
+
+.weather-card {
+    background-size: cover;
+    background-position: center;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    box-shadow: #ccc8 0px 1px 4px, #ccc8 0px 0px 0px 3px;
+    border-radius: 15px;
+}
+
+.week-day,
+.weather-degree {
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hi-lo,
+.condition-text {
+    font-size: 18px;
+    font-weight: 500;
+    text-shadow: 1px 2px 1.5px rgba(0, 0, 0, 0.3);
+}
+
+.err-msg {
+    font-weight: 500;
+    color: var(--nav-bar-text-color);
+
+}
+
+#return-home {
+    max-width: 250px;
+    font-size: 18px;
+    font-weight: 500;
+    margin: auto;
+}
+
+footer {
+    background-color: var(--nav-bar-background);
+}
+
+footer .icon-box {
+    font-size: 22px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #222;
+    transition: .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+footer .icon-box i {
+    color: var(--nav-bar-text-color);
+    transition: .5s;
+}
+
+footer .icon-box:hover {
+    background-color: #ddd;
+}
+
+footer .icon-box:hover i {
+    color: var(--nav-bar-background);
+}
+
+.not-saved {
+    color: #555;
+}
+
+.saved {
+    color: #C19C60;
+}
+
+.fa-bookmark {
+    font-size: 22px;
+    margin-right: 10px;
+    transition: .5s;
+}
+
+.fa-bookmark:hover {
+    opacity: 75%;
+}
+
+.saved-city-element {
+    background-position: center;
+    background-size: cover;
+    border-bottom: .7px solid rgba(0, 0, 0, 0.5);
+}
+
+#location-name {
+    font-size: 36px;
+    font-weight: 500;
+    background-color: rgba(120, 120, 120, 0.4);
+}
+
+#title-box {
+    min-height: 250px;
+    background-position: center;
+    background-size: cover;
+}
+#title-box p{
+    text-shadow: 1px 2px 1.5px rgba(0, 0, 0, 0.3);
+}
+
+#some-details {
+    padding-top: 5px;
+}
+
+#some-details p {
+    font-size: 18px;
+}
+
+.left-col {
+    background-color: var(--single-day-cards);
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 8px;
+    height: fit-content;
+}
+
+#astro {
+    background-color: var(--single-day-cards);
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 8px;
+}
+
+#astro p,
+#astro i {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.my-table {
+    background-color: var(--single-day-cards);
+}
+
+.my-table td,
+.my-table th {
+    padding: 8px 8px;
+    border-bottom: 1.5px solid #9995;
+}
+
+.my-table tr {
+    cursor: default;
+    transition: .1s;
+}
+
+.my-table tbody tr:hover{
+    background-color: var(--table-hover);
+}
