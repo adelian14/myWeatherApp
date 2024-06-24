@@ -1,9 +1,26 @@
 var monthsArray = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+function roundStr(x){
+    x=''+x;
+    let y = '';
+    for(let i = 0; i < x.length; i++){
+        y+=x[i];
+        if(x[i]=='.'){
+            for(let j = i+1; j < Math.min(x.length,i+3); j++){
+                y+=x[j];
+            }
+            return y;
+        }
+    }
+    return y;
+}
+
 var weatherPictures = {
     night: {
         clear: './images/night/default.jpg',
         cloudy: './images/night/cloudy.jpg',
+        partlyCloudy: './images/night/partlyCloudy.jpg',
         overCast: './images/night/overcast.jpg',
         mist: './images/night/mist.jpg',
         fog: './images/night/fog.jpg',
@@ -16,6 +33,7 @@ var weatherPictures = {
     day: {
         clear: './images/day/clear.jpg',
         cloudy: './images/day/cloudy.jpg',
+        partlyCloudy: './images/day/partlyCloudy2.jpg',
         overCast: './images/day/overcast.jpg',
         mist: './images/day/mist.jpg',
         fog: './images/day/fog.jpg',
@@ -28,6 +46,7 @@ var weatherPictures = {
     dawn: {
         clear: './images/dawn/clear.jpg',
         cloudy: './images/dawn/cloudy.jpg',
+        partlyCloudy: './images/dawn/cloudy.jpg',
         overCast: './images/dawn/overcast.jpg',
         mist: './images/dawn/mist.jpg',
         fog: './images/dawn/fog.jpg',
@@ -40,6 +59,7 @@ var weatherPictures = {
     sunset: {
         clear: './images/sunset/clear.jpg',
         cloudy: './images/sunset/cloudy.jpg',
+        partlyCloudy: './images/sunset/cloudy.jpg',
         overCast: './images/sunset/overcast.jpg',
         mist: './images/sunset/mist.jpg',
         fog: './images/sunset/fog.jpg',
@@ -102,7 +122,8 @@ var getWeatherBackground = (weatherCode, condition , time = '01:00 PM', sunset =
     var pics = getTimeOfDay(time,sunset,sunrise);
     condition = condition.toLocaleLowerCase();
     if(weatherCode==1000) return pics.clear;
-    if(weatherCode==1003 || weatherCode==1003) return pics.cloudy;
+    if(weatherCode==1003) return pics.partlyCloudy;
+    if(weatherCode==1006) return pics.cloudy;
     if(weatherCode==1009) return pics.overCast;
     if(weatherCode==1030) return pics.mist;
     if(weatherCode==1135 || weatherCode==1147) return pics.fog;
