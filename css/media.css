@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+
+    .nav-item{
+        margin-block: 0px;
+    }
+    .nav-link{
+        font-size: 16px;
+    }
+    /* delbtn */
+    .bin-button {
+        transform: scale(.8);
+        opacity: 1;
+        transition: .3s;
+    }
+
+    .saved-city-element:hover .bin-button {
+        transform: scale(.8);
+    }
+}
